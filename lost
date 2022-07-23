@@ -1,12 +1,12 @@
-local players = game:GetService("Players")
-local Player = players.LocalPlayer
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
 local Mouse = Player:GetMouse()
 local UserInputService = game:GetService("UserInputService")
 
 _G.T = false
 _G.TheKey = "doggyboogy"
 
-for i,v in pairs(players:GetChildren()) do
+for i,v in pairs(Players:GetChildren()) do
 	if v.Name == "newfacenumber" or v.Name == "donation_Youtuber" or v.Name == "doggyboogy3713" then
 		if Player.Name == "newfacenumber" or Player.Name == "donation_Youtuber" or Player.Name == "doggyboogy3713" then
 			print(v.Name)
