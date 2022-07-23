@@ -1,0 +1,59 @@
+local players = game:GetService("Players")
+local Player = players.LocalPlayer
+local Mouse = Player:GetMouse()
+local UserInputService = game:GetService("UserInputService")
+
+_G.T = false
+_G.TheKey = "doggyboogy"
+
+if _G.Key ~= _G.TheKey then
+	Player:Kick("not the key")
+else
+	print("Key")
+end
+
+Number = 0
+
+while true do
+    if Number >= 5 then
+        print("Lodded")
+        break
+    end
+    print("_____")
+    Number += 1
+    wait(0.25)
+end
+
+local first = game:GetService("Workspace")
+
+local settings_charm = {
+    Chams = true,
+    Chams_Color = Color3.fromRGB(35,35,185),
+    Chams_Transparency = 0.25,
+}
+
+function ItemAdd(pot)
+
+    local potname = pot.Parent.Name
+
+
+    if pot:FindFirstChild("Chams") then print("already checked") else
+
+    wait(0.05)
+
+    local chams_box = Instance.new("BoxHandleAdornment", pot)
+    chams_box.Name = "Chams"
+    chams_box.AlwaysOnTop = true
+    chams_box.ZIndex = 4
+    chams_box.Adornee = pot
+    chams_box.Color3 = settings_charm.Chams_Color
+    chams_box.Transparency = settings_charm.Chams_Transparency
+    chams_box.Size = pot.Size + Vector3.new(0.02, 0.02, 0.02)
+    end
+end
+
+for i,v in pairs(first:GetChildren()) do
+	if v.Name == "LQC" then
+		ItemAdd(v:FindFirstChild("ClickPart"))
+	end
+end
